@@ -1,17 +1,31 @@
 import React from 'react'
+import styled from 'styled-components'
+import titleImage from '../images/titleImage.png'
+import BeyondTheNotes from './BeyondTheNotes'
+import Included from './Included'
 
-class Sidebar extends React.Component {
+var Mains = styled.div `
+  padding: 21px;
+`;
+var TitleImage = styled.img `
+  width: 70%;
+  margin-left: 15%;
+`;
+
+class Main extends React.Component {
   constructor() {
     super()
-    this.state = {
-
-    }
+    this.state = {}
   }
   render() {
     return (
-      <p>MAIN</p>
+      <Mains>
+        <TitleImage src={titleImage}/>
+        <BeyondTheNotes />
+        <Included />
+      </Mains>
     )
   }
 }
 
-export default Sidebar
+export default Main

@@ -1,17 +1,51 @@
 import React from 'react'
+import styled from 'styled-components'
+
+var Foot = styled.div `
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  background-color: #54AB32;
+  cursor: pointer;
+  padding: 21px;
+`;
+
+var Atag = styled.a`
+  transition: 0.3s;
+  color: #DADADA;
+  :hover {
+    color: #FEDCBA;
+  }
+  :active {
+    color: black;
+  }
+`;
 
 class Footer extends React.Component {
   constructor() {
     super()
-    this.state = {
-
-    }
+    this.state = {}
   }
   render() {
-    return (
-      <p>Footer</p>
-
-    )
+    return (<Foot>
+      <div class="footer-links">
+        <Atag>Home</Atag>
+        &nbsp; | &nbsp;
+        <Atag>About Us</Atag>
+        &nbsp; | &nbsp;
+        <Atag>Products</Atag>
+        &nbsp; | &nbsp;
+        <Atag>Sign Up</Atag>
+        &nbsp; | &nbsp;
+        <Atag>Contact Us</Atag>
+        &nbsp; | &nbsp;
+      </div>
+      <div>
+        <p class="copy">&copy; 2018 Beyond The Notes</p>
+      </div>
+    </Foot>)
   }
 }
 
