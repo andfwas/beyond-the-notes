@@ -9,7 +9,12 @@ var Foot = styled.div `
   justify-content: space-around;
   background-color: #54AB32;
   cursor: pointer;
-  padding: 21px;
+  padding: 1vw;
+`;
+
+var Links = styled.div`
+  display: flex;
+  flex-flow: row;
 `;
 
 var Atag = styled.a`
@@ -30,18 +35,18 @@ class Footer extends React.Component {
   }
   render() {
     return (<Foot>
-      <div class="footer-links">
+      <Links>
         <Atag>Home</Atag>
-        &nbsp; | &nbsp;
+        &nbsp;<p> | </p>&nbsp;
         <Atag>About Us</Atag>
-        &nbsp; | &nbsp;
+        &nbsp;<p> | </p>&nbsp;
         <Atag>Products</Atag>
-        &nbsp; | &nbsp;
+        &nbsp;<p> | </p>&nbsp;
         <Atag>Sign Up</Atag>
-        &nbsp; | &nbsp;
+        &nbsp;<p> | </p>&nbsp;
         <Atag>Contact Us</Atag>
-        &nbsp; | &nbsp;
-      </div>
+        &nbsp;<p> | </p>&nbsp;
+      </Links>
       <div>
         <p class="copy">&copy; 2018 Beyond The Notes</p>
       </div>

@@ -40,6 +40,7 @@ class BeyondTheNotes extends React.Component {
         <br/>
         <Atag2 href="#" className="main-link-right">Learn more about Online Music Learning</Atag2>
         <br/>
+        <br/>
         <hr/>
       </div>
     )

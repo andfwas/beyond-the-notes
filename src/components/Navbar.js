@@ -5,7 +5,7 @@ var Bar = styled.div`
   width: 95%;
   margin-left: 2.5%;
   margin-top: 10px;
-  padding: 20px;
+  padding: 2vw;
   background-color: red;
   display: flex;
   flex-flow: row;

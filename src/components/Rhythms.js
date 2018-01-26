@@ -34,6 +34,7 @@ var Atag = styled.a`
     color: blue;
   }
   float: right;
+  cursor: pointer;
 `;
 
 class Rhythms extends React.Component {
@@ -61,21 +62,20 @@ class Rhythms extends React.Component {
           <Staff src={staff} alt="" />
         </Row>
           <Star>
-            <span class="glyphicon glyphicon-star" aria-hidden="true">
+            <span className="glyphicon glyphicon-star" aria-hidden="true">
                   </span> &nbsp;&nbsp;
             <h4>Demos</h4>
           </Star>
-          <br />
         <Links>
-          <a href="#" class="main-link-left">Launch Level 1 Study Mode Demo</a>
-          <a href="#" class="main-link-left">Launch Level 1 Practice Mode Demo</a>
-          <a href="#" class="main-link-left">Start your Free Trial Now!</a>
+          <Atag>Launch Level 1 Study Mode Demo</Atag>
+          <Atag>Launch Level 1 Practice Mode Demo</Atag>
+          <Atag>Start your Free Trial Now!</Atag>
         </Links>
         <br />
         <p>A fun, innovative way to learn how to read and count rhythms. Complete with a study mode for cognitive learning and a practice mode for psychomotor training, students will be taken through 230 rhythm slides in 8 levels of increasing complexity.</p>
+        <Atag href="#">Learn More about Rhythm Rulz</Atag>
         <br />
-        <Atag href="#">
-            Learn More about Rhythm Rulz</Atag>
+        <br />
         <hr />
       </div>
     )

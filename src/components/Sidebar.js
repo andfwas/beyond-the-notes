@@ -21,8 +21,8 @@ var Leftbar = styled.div`
 var LogoDiv = styled.div`
   width: 90%;
   margin: auto;
-  margin-top: 21px;
-  margin-bottom: 21px;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
   border-radius: 1vw;
   background-color: white;
   box-shadow: 0.5vw 0.5vw 0.5vw black;

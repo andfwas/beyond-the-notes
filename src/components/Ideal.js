@@ -16,7 +16,8 @@ class Ideal extends React.Component {
   }
   render() {
     return (
-      <div>IDEAL FOR...
+      <div>
+        <h3>Ideal for...</h3>
         <Star>
           <span className="glyphicon glyphicon-star" aria-hidden="true">
               </span> &nbsp;&nbsp;

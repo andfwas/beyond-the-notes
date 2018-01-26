@@ -21,7 +21,6 @@ var Staff = styled.img`
     width: 18vw;
   }
 `;
-
 var Atag = styled.a`
   color: purple;
   transition: 0.3s;
@@ -56,10 +55,9 @@ class Notes extends React.Component {
           </Row>
           <p>The key to advancing a musicians' sight reading and overall music reading ability is to recognize every note at a quick glance. Students will learn the different notes of the different staffs: Treble, Alto, Tenor, and Bass. Compare the staffs
             or just view one at a time. Lesson and drills are both included for an interactive learning experience.</p>
+          <Atag href="#">Learn More about Name That Note!</Atag>
           <br />
-          <Atag href="#">
-            Learn More about Name That Note!</Atag>
-            <br />
+          <br />
           <hr />
       </div>
     )
