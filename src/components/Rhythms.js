@@ -1,19 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import staff from '../images/staff.png'
-
 var Star = styled.div`
   display: flex;
   flex-flow: row;
   align-items: baseline;
 `;
-
 var Row = styled.div`
   display: flex;
   flex-flow: row;
   align-items: center;
 `;
-
 var Staff = styled.img`
   width: 6vw;
   transition: 0.5s;
@@ -21,12 +18,10 @@ var Staff = styled.img`
     width: 18vw;
   }
 `;
-
 var Links = styled.div`
   display: flex;
   flex-flow: column;
 `;
-
 var Atag = styled.a`
   color: purple;
   transition: 0.3s;
@@ -36,7 +31,6 @@ var Atag = styled.a`
   float: right;
   cursor: pointer;
 `;
-
 class Rhythms extends React.Component {
   constructor() {
     super()
@@ -71,7 +65,6 @@ class Rhythms extends React.Component {
           <Atag>Launch Level 1 Practice Mode Demo</Atag>
           <Atag>Start your Free Trial Now!</Atag>
         </Links>
-        <br />
         <p>A fun, innovative way to learn how to read and count rhythms. Complete with a study mode for cognitive learning and a practice mode for psychomotor training, students will be taken through 230 rhythm slides in 8 levels of increasing complexity.</p>
         <Atag href="#">Learn More about Rhythm Rulz</Atag>
         <br />
@@ -81,5 +74,4 @@ class Rhythms extends React.Component {
     )
   }
 }
-
 export default Rhythms

@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Center = styled.div`
+var Center = styled.div`
   width: 80%;
   margin: auto;
   margin-top: 4vw;
   display: flex;
   flex-flow: column;
 `;
-const Htag = styled.h3`
+var Htag = styled.h3`
   color: white;
 `;
 var Atag = styled.a`
@@ -23,6 +23,7 @@ var Atag = styled.a`
     color: white;
   }
 `;
+
 class Learning extends React.Component {
   constructor() {
     super()

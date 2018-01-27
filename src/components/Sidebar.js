@@ -12,13 +12,13 @@ var Left = styled.div`
   justify-content: space-between;
   width: 40%;
 `;
-
 var Leftbar = styled.div`
   display: flex;
   flex-flow: column;
   background-color: #035460;
 `;
 var LogoDiv = styled.div`
+  transition: 0.3s;
   width: 90%;
   margin: auto;
   margin-top: 2vw;
@@ -26,6 +26,10 @@ var LogoDiv = styled.div`
   border-radius: 1vw;
   background-color: white;
   box-shadow: 0.5vw 0.5vw 0.5vw black;
+  :hover {
+    background-color: #EFEFFF;
+    box-shadow: 0 0 0.5vw blue;
+  }
 `;
 var ButtonDiv = styled.div`
   margin-top: 4vw;
@@ -33,14 +37,13 @@ var ButtonDiv = styled.div`
   justify-content: center;
 `;
 var Button = styled.button`
-  height: 3vw;
+  height: 5vw;
   width: 12vw;
   font-size: 1.5vw;
   border-radius: 1vw;
   transition: 0.2s;
   :hover {
-    background-color: grey;
-    color: white;
+    background-color: lightgrey;
     border: none;
   }
 `;
@@ -57,7 +60,7 @@ class Sidebar extends React.Component {
   constructor() {
     super()
     this.state = {
-
+      
     }
   }
   render() {
@@ -70,7 +73,7 @@ class Sidebar extends React.Component {
           </LogoDiv>
         </a>
         <ButtonDiv>
-          <Button type="button" name="menu">Main Menu</Button>
+          <Button type="button" className={this.state.active} onClick={this.handleClick}>Start Learning Now!</Button>
         </ButtonDiv>
         <Learning />
         <Products />

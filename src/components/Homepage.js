@@ -20,7 +20,9 @@ var Mains = styled.div`
 class Homepage extends React.Component {
   constructor() {
     super()
-    this.state = {}
+    this.state = {
+      
+    }
   }
   render() {
     return (
