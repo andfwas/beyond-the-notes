@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import titleImage from '../images/titleImage.png'
 import BeyondTheNotes from './BeyondTheNotes'
 import Included from './Included'
-import Staff from './Staff'
+import Lesson from './Lesson'
 
 var Mains = styled.div `
 
@@ -33,7 +33,7 @@ class Main extends React.Component {
             </div>
           ) : null
         }
-        { this.props.status ? (<Staff />) : null }
+        { this.props.status ? (<Lesson />) : null }
       </div>
     </Mains>);
   }

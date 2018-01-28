@@ -1,0 +1,28 @@
+import React from 'react'
+export default [
+  require('../images/notes/0.png'),
+  require('../images/notes/1.png'),
+  require('../images/notes/2.png'),
+  require('../images/notes/3.png'),
+  require('../images/notes/4.png'),
+  require('../images/notes/5.png'),
+  require('../images/notes/6.png'),
+  require('../images/notes/7.png'),
+  require('../images/notes/8.png'),
+  require('../images/notes/9.png'),
+  require('../images/notes/10.png'),
+  require('../images/notes/11.png'),
+  require('../images/notes/12.png'),
+  require('../images/notes/13.png'),
+  require('../images/notes/14.png'),
+  require('../images/notes/15.png'),
+  require('../images/notes/16.png'),
+  require('../images/notes/17.png'),
+  require('../images/notes/18.png'),
+  require('../images/notes/19.png'),
+  require('../images/notes/20.png'),
+  require('../images/notes/treble.png'),
+  require('../images/notes/alto.png'),
+  require('../images/notes/tenor.png'),
+  require('../images/notes/bass.png')
+]
