@@ -60,7 +60,7 @@ class Sidebar extends React.Component {
   constructor() {
     super()
     this.state = {
-      
+
     }
   }
   render() {
@@ -73,7 +73,7 @@ class Sidebar extends React.Component {
           </LogoDiv>
         </a>
         <ButtonDiv>
-          <Button type="button" className={this.state.active} onClick={this.handleClick}>Start Learning Now!</Button>
+          <Button type="button" onClick={this.props.swapStaff}>Start Learning Now!</Button>
         </ButtonDiv>
         <Learning />
         <Products />

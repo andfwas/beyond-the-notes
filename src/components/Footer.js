@@ -48,7 +48,7 @@ class Footer extends React.Component {
         &nbsp;<p> | </p>&nbsp;
       </Links>
       <div>
-        <p class="copy">&copy; 2018 Beyond The Notes</p>
+        <p className="copy">&copy; 2018 Beyond The Notes</p>
       </div>
     </Foot>)
   }

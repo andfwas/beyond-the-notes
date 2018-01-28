@@ -1,4 +1,10 @@
 import React from 'react'
+import styled from 'styled-components'
+import staff from '../images/staff.png'
+
+var Lesson = styled.img`
+  width: 100%;
+`
 
 class Staff extends React.Component {
   constructor() {
@@ -9,7 +15,7 @@ class Staff extends React.Component {
   }
   render() {
     return (
-
+      <img src={staff} />
     )
   }
 }
