@@ -6,11 +6,11 @@ import Included from './Included'
 import Staff from './Staff'
 
 var Mains = styled.div `
-  padding: 21px;
+
 `;
 var TitleImage = styled.img `
   width: 70%;
-  margin-left: 15%;
+  margin: 2vw 0 2vw 15%;
 `;
 
 class Main extends React.Component {

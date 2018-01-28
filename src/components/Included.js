@@ -4,6 +4,10 @@ import Notes from './Notes'
 import Rhythms from './Rhythms'
 import Ideal from './Ideal'
 
+var Main = styled.div`
+  padding-left: 2vw;
+  margin-bottom: 2vw;
+`
 
 class Included extends React.Component {
   constructor() {
@@ -14,12 +18,12 @@ class Included extends React.Component {
   }
   render() {
     return (
-      <div>
+      <Main>
         <h2>Whats Included?</h2>
         <Notes />
         <Rhythms />
         <Ideal />
-      </div>
+      </Main>
     )
   }
 }

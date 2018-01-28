@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import staff from '../images/staff.png'
+
 var Star = styled.div`
   display: flex;
   flex-flow: row;
   align-items: baseline;
+  font-size: 1.2vw;
 `;
 var Row = styled.div`
   display: flex;

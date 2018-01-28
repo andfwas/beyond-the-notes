@@ -5,6 +5,7 @@ var Star = styled.div`
   display: flex;
   flex-flow: row;
   align-items: baseline;
+  font-size: 1.2vw;
 `
 
 class Ideal extends React.Component {

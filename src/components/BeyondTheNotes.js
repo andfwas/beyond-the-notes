@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+var Main = styled.div`
+  padding-left: 2vw;
+`
+
 var Atag = styled.a`
   color: purple;
   transition: 0.3s;
@@ -26,7 +30,7 @@ class BeyondTheNotes extends React.Component {
   }
   render() {
     return (
-      <div>
+      <Main>
         <h2>Beyond the Notes
           <em> Online Music Learning</em>
         </h2>
@@ -42,7 +46,7 @@ class BeyondTheNotes extends React.Component {
         <br/>
         <br/>
         <hr/>
-      </div>
+      </Main>
     )
   }
 }

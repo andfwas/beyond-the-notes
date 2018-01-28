@@ -15,6 +15,7 @@ var Mains = styled.div`
   display: flex;
   flex-flow: column;
   width: 100%;
+  padding-top: 0;
 `;
 
 class Homepage extends React.Component {
@@ -22,24 +23,38 @@ class Homepage extends React.Component {
     super()
     this.state = {
       sidebarActive: false,
-      main: true
+      main: true,
+      buttonHtml: "Start Learning Now"
 
     }
   }
   swapStaff = () => {
+    var buttonState
+    if (this.state.main) {
+      buttonState = 'Home'
+    } else {
+      buttonState = 'Start Learning Now'
+      // console.log(this.state.main);
+    }
+    // console.log('before setState', this.state);
     this.setState({
       sidebarActive: !this.state.sidebarActive,
-      main: !this.state.main
+      main: !this.state.main,
+      buttonHtml: buttonState
     })
+    // console.log(buttonState);
+    // console.log(this.state);
   }
   render() {
     // console.log(this.state.main);
     return (
       <div>
         <Body>
-          <Sidebar swapStaff={this.swapStaff}/>
+          <Sidebar swapStaff={this.swapStaff} buttonHtml={this.state.buttonHtml}  status={this.state.sidebarActive}/>
           <Mains>
-            <Navbar/>
+            { !this.state.sidebarActive ? (
+              <Navbar/>
+            ) : null}
             <Main status={this.state.sidebarActive} page={this.state.main}/>
           </Mains>
         </Body>

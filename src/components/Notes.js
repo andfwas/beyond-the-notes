@@ -6,6 +6,7 @@ var Star = styled.div`
   display: flex;
   flex-flow: row;
   align-items: baseline;
+  font-size: 1.2vw;
 `
 
 var Row = styled.div`

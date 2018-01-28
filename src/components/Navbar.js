@@ -4,7 +4,7 @@ import styled from 'styled-components'
 var Bar = styled.div`
   width: 95%;
   margin-left: 2.5%;
-  margin-top: 10px;
+  margin-top: 0;
   padding: 2vw;
   background-color: red;
   display: flex;
