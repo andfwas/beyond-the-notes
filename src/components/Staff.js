@@ -32,17 +32,25 @@ var NoteName = styled.div`
   font-size: 10vw;
   color: black;
 `
+var NotNoteName = styled.div`
+margin-top: 7vw;
+float: right;
+font-size: 10vw;
+color: black;
+display: none;
+`
 var trebleList = ['F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E']
 var altoList = ['G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F']
 var tenorList = ['E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D']
 var bassList = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G']
-
 
 class Staff extends React.Component {
 
   render() {
     var clef = this.props.clef
     var note = this.props.noteIndex
+    var show = this.props.showHide
+    console.log(show);
 
     function findNote(clef, index) {
       if (clef === 21) {
@@ -57,16 +65,15 @@ class Staff extends React.Component {
     }
 
     var noteName = findNote(clef, note)
-    console.log(clef);
-    console.log(note);
-    console.log(noteName);
     return (
       <div>
         <ImageContainer>
             <Clef src={images[clef]} />
             <Note src={images[note]} />
         </ImageContainer>
-        <NoteName>{noteName}</NoteName>
+        { show ? (
+          <NoteName>{noteName}</NoteName>
+        ) : null }
       </div>
     );
   }

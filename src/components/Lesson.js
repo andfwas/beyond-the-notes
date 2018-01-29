@@ -44,7 +44,6 @@ var Clef = styled.button`
   border-radius: 0.7vw;
   transition: 0.2s;
   box-shadow: 0.2vw 0.2vw 0.2vw black;
-  background-image: {images[0]};
   :hover {
     background-color: lightgrey;
     border: none;
@@ -62,6 +61,41 @@ var ButtonDiv = styled.div`
   justify-content: center;
   background-color: #035460;
 `;
+var Middle = styled.div`
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+`
+var ClefRow = styled.div`
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  margin-top: -4vw;
+  margin-bottom: 1vw;
+`
+var ShowHide = styled.button`
+  font-size: 1vw;
+  word-wrap: normal;
+  width: 10vw;
+  margin-bottom: -4vw;
+  border-radius: 0.7vw;
+  transition: 0.2s;
+  box-shadow: 0.2vw 0.2vw 0.2vw black;
+  :hover {
+    background-color: lightgrey;
+    border: none;
+    box-shadow: none;
+  }
+  :focus {
+    outline: none;
+  }
+  :active {
+    background-color: #FFEFEF;
+  }
+`
 class Lesson extends React.Component {
   constructor() {
     super()
@@ -70,7 +104,8 @@ class Lesson extends React.Component {
       note: 4,
       noteIndex: 4,
       start: false,
-      end: false
+      end: false,
+      showHide: false
     }
   }
   treble = () => {
@@ -135,6 +170,12 @@ class Lesson extends React.Component {
       })
     }
   }
+  showHide = () => {
+    var onOrOff = !this.state.showHide
+    this.setState({
+      showHide: onOrOff
+    })
+  }
   render() {
     var start = this.state.start
     var end = this.state.end
@@ -147,17 +188,22 @@ class Lesson extends React.Component {
             { !start ? (
               <Button id="back" onClick={() => this.decrement()}>&#8592; BACK</Button>
             ) : <NoButton />}
-            <Clef onClick={() => this.trebleHandler()}>Treble Clef</Clef>
-            <Clef onClick={() => this.altoHandler()}>Alto Clef</Clef>
-            <Clef onClick={() => this.tenorHandler()}>Tenor Clef</Clef>
-            <Clef onClick={() => this.bassHandler()}>Bass Clef</Clef>
+            <Middle>
+            <ClefRow>
+              <Clef onClick={() => this.trebleHandler()}>Treble Clef</Clef>
+              <Clef onClick={() => this.altoHandler()}>Alto Clef</Clef>
+              <Clef onClick={() => this.tenorHandler()}>Tenor Clef</Clef>
+              <Clef onClick={() => this.bassHandler()}>Bass Clef</Clef>
+            </ClefRow>
+            <ShowHide onClick={() => this.showHide()}>Show/Hide Note Name</ShowHide>
+          </Middle>
             { !end ? (
               <Button id="next" onClick={() => this.increment()}>NEXT &#8594;</Button>
             ) : <NoButton />}
           </Container>
         </ButtonDiv>
         <Lessons>
-          <Staff clef={this.state.clef} note={this.state.note} noteIndex={this.state.noteIndex} start={this.state.start} end={this.state.end} />
+          <Staff clef={this.state.clef} note={this.state.note} noteIndex={this.state.noteIndex} start={this.state.start} end={this.state.end} showHide={this.state.showHide}/>
         </Lessons>
       </div>
     )
