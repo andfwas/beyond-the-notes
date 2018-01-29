@@ -14,14 +14,8 @@ var TitleImage = styled.img `
 `;
 
 class Main extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
   render() {
-    // console.log(this.state.main);
+    // console.log(this.props);
     return (
       <Mains>
       <div className=''>
@@ -33,7 +27,7 @@ class Main extends React.Component {
             </div>
           ) : null
         }
-        { this.props.status ? (<Lesson />) : null }
+        { this.props.status ? (<Lesson props={this.props} treble={this.props.treble} alto={this.props.alto} tenor={this.props.tenor} bass={this.props.bass}/>) : null }
       </div>
     </Mains>);
   }

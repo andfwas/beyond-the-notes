@@ -34,12 +34,6 @@ var Atag = styled.a`
   cursor: pointer;
 `;
 class Rhythms extends React.Component {
-  constructor() {
-    super()
-    this.state =  {
-
-    }
-  }
   render() {
     return (
       <div>

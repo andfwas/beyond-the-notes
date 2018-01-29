@@ -4,41 +4,34 @@ import * as data from './Note'
 
 var images = data.default
 
-console.log(images);
-
 var ImageContainer = styled.div`
   width: 100%;
   position: relative;
 `
-
-var Image1 = styled.img`
+var Note = styled.img`
   width: 100%;
   position: absolute;
   z-index: 1;
 `
-var Image2 = styled.img`
+var Clef= styled.img`
   width: 100%;
   position: absolute;
   z-index: 1;
 `
+// var trebleList = ['F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E']
+// var altoList = ['G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F']
+// var tenorList = ['E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D']
+// var bassList = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G']
 
 
 class Staff extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      treble: ['F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E'],
-      alto: ['G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F'],
-      tenor: ['E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D'],
-      bass: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G']
-    }
-  }
-
   render() {
+    var currentClef = this.props.props.props.state.clef
+
     return (
       <ImageContainer>
-        <Image1 src={images[12]} />
-        <Image2 src={images[21]} />
+        <Clef src={images[currentClef]} />
+        <Note src={images[17]} />
       </ImageContainer>
     );
   }

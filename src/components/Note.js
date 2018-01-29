@@ -1,4 +1,3 @@
-import React from 'react'
 export default [
   require('../images/notes/0.png'),
   require('../images/notes/1.png'),

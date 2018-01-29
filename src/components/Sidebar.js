@@ -59,41 +59,33 @@ var Image = styled.img`
   width: 90%;
   margin-left: 5%;
 `;
+
 class Sidebar extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-    }
-  }
   render() {
     return (
       <Left>
         <Leftbar>
-
-        <ButtonDiv>
-          { this.props.buttonHtml ? (
-            <Button type="button" onClick={this.props.swapStaff}>{this.props.buttonHtml}</Button>
+          <ButtonDiv>
+            { this.props.buttonHtml ? (
+              <Button type="button" onClick={this.props.swapStaff}>{this.props.buttonHtml}</Button>
+            ) : null }
+          </ButtonDiv>
+          { !this.props.status ? (
+            <div>
+              <Learning />
+              <Products />
+              <About />
+            </div>
           ) : null }
-        </ButtonDiv>
-        { !this.props.status ? (
-          <div>
-            <Learning />
-            <Products />
-            <About />
-
-          </div>
-
+        </Leftbar>
+        { this.props.status ? (
+          <LogoDiv>
+            <LogoImage src={titleImage} />
+          </LogoDiv>
         ) : null}
-      </Leftbar>
-      { this.props.status ? (
-        <LogoDiv>
-          <LogoImage src={titleImage} />
-        </LogoDiv>
-      ) : null}
       <Image src={musicKing} />
     </Left>
     )
   }
 }
-
 export default Sidebar
