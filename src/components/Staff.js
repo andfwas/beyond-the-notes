@@ -26,12 +26,14 @@ var Clef= styled.img`
 
 class Staff extends React.Component {
   render() {
-    var currentClef = this.props.props.props.state.clef
+    var clef = this.props.clef
+    var note = this.props.noteIndex
+    var index = this.props.noteIndex
 
     return (
       <ImageContainer>
-        <Clef src={images[currentClef]} />
-        <Note src={images[17]} />
+        <Clef src={images[clef]} />
+        <Note src={images[index]} />
       </ImageContainer>
     );
   }

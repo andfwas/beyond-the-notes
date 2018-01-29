@@ -24,14 +24,8 @@ class Homepage extends React.Component {
     this.state = {
       sidebarActive: false,
       main: true,
-      buttonHtml: "Start Learning Now",
-      clef: 21,
-      note: 4
+      buttonHtml: "Start Learning Now"
     }
-    this.treble = this.treble.bind(this)
-    this.alto = this.alto.bind(this)
-    this.tenor = this.tenor.bind(this)
-    this.bass = this.bass.bind(this)
   }
   swapStaff = () => {
     var buttonState
@@ -46,26 +40,7 @@ class Homepage extends React.Component {
       buttonHtml: buttonState
     })
   }
-  treble = () => {
-    this.setState({
-      clef: 21
-    })
-  }
-  alto = () => {
-    this.setState({
-      clef: 22
-    })
-  }
-  tenor = () => {
-    this.setState({
-      clef: 23
-    })
-  }
-  bass = () => {
-    this.setState({
-      clef: 24
-    })
-  }
+
   render() {
     return (
       <div>
@@ -75,7 +50,7 @@ class Homepage extends React.Component {
             { !this.state.sidebarActive ? (
               <Navbar/>
             ) : null}
-            <Main status={this.state.sidebarActive} page={this.state.main} state={this.state} treble={this.treble} alto={this.alto} tenor={this.tenor} bass={this.bass}/>
+            <Main status={this.state.sidebarActive} page={this.state.main} />
           </Mains>
         </Body>
         <Footer/>

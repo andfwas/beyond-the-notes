@@ -58,39 +58,85 @@ var ButtonDiv = styled.div`
   background-color: #035460;
 `;
 class Lesson extends React.Component {
-  handleTreble = () => {
-    this.props.treble()
+  constructor() {
+    super()
+    this.state = {
+      clef: 21,
+      note: 4,
+      noteIndex: 4,
+      start: true,
+      end: false
+    }
   }
-  handleAlto = () => {
-    this.props.alto()
-
+  treble = () => {
+    this.setState({
+      clef: 21
+    })
   }
-  handleTenor = () => {
-    this.props.tenor()
-
+  alto = () => {
+    this.setState({
+      clef: 22
+    })
   }
-  handleBass = () => {
-    this.props.bass()
-
+  tenor = () => {
+    this.setState({
+      clef: 23
+    })
   }
-  changeNote = () => {
-
+  bass = () => {
+    this.setState({
+      clef: 24
+    })
+  }
+  trebleHandler = () => {
+    this.treble()
+  }
+  altoHandler = () => {
+    this.alto()
+  }
+  tenorHandler = () => {
+    this.tenor()
+  }
+  bassHandler = () => {
+    this.bass()
+  }
+  increment = () => {
+    if (this.state.noteIndex == 20) {
+    } else {
+      var i = this.state.noteIndex + 1
+      this.setState({
+        noteIndex: i
+      })
+    }
+  }
+  decrement = () => {
+    if (this.state.noteIndex == 0) {
+    } else {
+      var i = this.state.noteIndex - 1
+      this.setState({
+        noteIndex: i
+      })
+    }
   }
   render() {
+    var start = this.state.start
+    var end = this.state.end
+    // console.log('start', start);
+    // console.log('end', end);
     return (
       <div>
         <ButtonDiv>
           <Container>
-            <Button id="back">&#8592; BACK</Button>
-            <Clef onClick={() => this.handleTreble()}>Treble Clef</Clef>
-            <Clef onClick={() => this.handleAlto()}>Alto Clef</Clef>
-            <Clef onClick={() => this.handleTenor()}>Tenor Clef</Clef>
-            <Clef onClick={() => this.handleBass()}>Bass Clef</Clef>
-            <Button id="next">NEXT &#8594;</Button>
+            <Button id="back" onClick={() => this.decrement()}>&#8592; BACK</Button>
+            <Clef onClick={() => this.trebleHandler()}>Treble Clef</Clef>
+            <Clef onClick={() => this.altoHandler()}>Alto Clef</Clef>
+            <Clef onClick={() => this.tenorHandler()}>Tenor Clef</Clef>
+            <Clef onClick={() => this.bassHandler()}>Bass Clef</Clef>
+            <Button id="next" onClick={() => this.increment()}>NEXT &#8594;</Button>
           </Container>
         </ButtonDiv>
         <Lessons>
-          <Staff props={this.props}/>
+          <Staff clef={this.state.clef} note={this.state.note} noteIndex={this.state.noteIndex} start={this.state.start} end={this.state.end} />
         </Lessons>
       </div>
     )
