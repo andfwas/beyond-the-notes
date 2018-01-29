@@ -140,8 +140,6 @@ class Lesson extends React.Component {
     var end = this.state.end
     var index = this.state.index
 
-    console.log('start', start);
-    console.log('end', end);
     return (
       <div>
         <ButtonDiv>

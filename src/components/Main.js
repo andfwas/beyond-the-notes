@@ -16,7 +16,7 @@ var TitleImage = styled.img `
 class Main extends React.Component {
 
   render() {
-    
+
     return (
       <Mains>
       <div className=''>
