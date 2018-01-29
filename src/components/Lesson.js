@@ -199,8 +199,12 @@ class Lesson extends React.Component {
         <ButtonDiv>
           <Container>
             { !start ? (
-              <Button id="back" onClick={() => this.decrement()}>&#8592; BACK</Button>
+              <Button id="back" onClick={() => this.decrement()}>DOWN</Button>
             ) : <NoButton />}
+            { !end ? (
+              <Button id="next" onClick={() => this.increment()}>UP</Button>
+            ) : <NoButton />}
+            <Button onClick={() => this.pickRandom()}>RANDOM</Button>
             <Middle>
             <ClefRow>
               <Clef onClick={() => this.trebleHandler()}>Treble Clef</Clef>
@@ -209,13 +213,9 @@ class Lesson extends React.Component {
               <Clef onClick={() => this.bassHandler()}>Bass Clef</Clef>
             </ClefRow>
             <SequenceRow>
-              <ShowHide onClick={() => this.pickRandom()}>Pick a Random Note</ShowHide>
               <ShowHide onClick={() => this.showHide()}>Show/Hide Note Name</ShowHide>
             </SequenceRow>
           </Middle>
-            { !end ? (
-              <Button id="next" onClick={() => this.increment()}>NEXT &#8594;</Button>
-            ) : <NoButton />}
           </Container>
         </ButtonDiv>
         <Lessons>
