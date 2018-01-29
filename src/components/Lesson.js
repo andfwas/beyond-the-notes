@@ -69,17 +69,24 @@ var Middle = styled.div`
 
 `
 var ClefRow = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-flow: row;
   justify-content: space-around;
   margin-top: -4vw;
   margin-bottom: 1vw;
 `
+var SequenceRow = styled.div`
+  width: 80%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+
+`
 var ShowHide = styled.button`
   font-size: 1vw;
   word-wrap: normal;
-  width: 10vw;
+  width: 7.5vw;
   margin-bottom: -4vw;
   border-radius: 0.7vw;
   transition: 0.2s;
@@ -170,6 +177,12 @@ class Lesson extends React.Component {
       })
     }
   }
+  pickRandom = () => {
+    var random = Math.floor(Math.random()*21)
+    this.setState({
+      noteIndex: random
+    })
+  }
   showHide = () => {
     var onOrOff = !this.state.showHide
     this.setState({
@@ -195,7 +208,10 @@ class Lesson extends React.Component {
               <Clef onClick={() => this.tenorHandler()}>Tenor Clef</Clef>
               <Clef onClick={() => this.bassHandler()}>Bass Clef</Clef>
             </ClefRow>
-            <ShowHide onClick={() => this.showHide()}>Show/Hide Note Name</ShowHide>
+            <SequenceRow>
+              <ShowHide onClick={() => this.pickRandom()}>Pick a Random Note</ShowHide>
+              <ShowHide onClick={() => this.showHide()}>Show/Hide Note Name</ShowHide>
+            </SequenceRow>
           </Middle>
             { !end ? (
               <Button id="next" onClick={() => this.increment()}>NEXT &#8594;</Button>

@@ -45,7 +45,12 @@ var tenorList = ['E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'
 var bassList = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'C', 'D', 'E', 'F', 'G']
 
 class Staff extends React.Component {
+  constructor() {
+    super()
+    this.state = {
 
+    }
+  }
   render() {
     var clef = this.props.clef
     var note = this.props.noteIndex
