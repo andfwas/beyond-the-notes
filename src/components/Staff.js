@@ -5,8 +5,9 @@ import * as data from './Note'
 var images = data.default
 
 var ImageContainer = styled.div`
-  width: 100%;
+  width: 80%;
   position: relative;
+  margin-left: -4.5vw;
 `
 var Note = styled.img`
   width: 100%;
@@ -29,6 +30,7 @@ class Staff extends React.Component {
     var clef = this.props.clef
     var note = this.props.noteIndex
     var index = this.props.noteIndex
+    console.log(index);
 
     return (
       <ImageContainer>

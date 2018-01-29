@@ -33,6 +33,11 @@ var Button = styled.button`
     background-color: #EFEFFF;
   }
 `;
+var NoButton = styled.div`
+height: 5vw;
+width: 12vw;
+font-size: 1.5vw;
+`
 var Clef = styled.button`
   width: 4vw;
   font-size: 1vw;
@@ -64,7 +69,7 @@ class Lesson extends React.Component {
       clef: 21,
       note: 4,
       noteIndex: 4,
-      start: true,
+      start: false,
       end: false
     }
   }
@@ -101,38 +106,56 @@ class Lesson extends React.Component {
     this.bass()
   }
   increment = () => {
-    if (this.state.noteIndex == 20) {
+    if (this.state.noteIndex == 19) {
+      this.setState({
+        noteIndex: 20,
+        end: true
+      })
     } else {
       var i = this.state.noteIndex + 1
       this.setState({
-        noteIndex: i
+        noteIndex: i,
+        start: false,
+        end: false
       })
     }
   }
   decrement = () => {
-    if (this.state.noteIndex == 0) {
+    if (this.state.noteIndex == 1) {
+      this.setState({
+        noteIndex: 0,
+        start: true
+      })
     } else {
       var i = this.state.noteIndex - 1
       this.setState({
-        noteIndex: i
+        noteIndex: i,
+        start: false,
+        end: false
       })
     }
   }
   render() {
     var start = this.state.start
     var end = this.state.end
-    // console.log('start', start);
-    // console.log('end', end);
+    var index = this.state.index
+
+    console.log('start', start);
+    console.log('end', end);
     return (
       <div>
         <ButtonDiv>
           <Container>
-            <Button id="back" onClick={() => this.decrement()}>&#8592; BACK</Button>
+            { !start ? (
+              <Button id="back" onClick={() => this.decrement()}>&#8592; BACK</Button>
+            ) : <NoButton />}
             <Clef onClick={() => this.trebleHandler()}>Treble Clef</Clef>
             <Clef onClick={() => this.altoHandler()}>Alto Clef</Clef>
             <Clef onClick={() => this.tenorHandler()}>Tenor Clef</Clef>
             <Clef onClick={() => this.bassHandler()}>Bass Clef</Clef>
-            <Button id="next" onClick={() => this.increment()}>NEXT &#8594;</Button>
+            { !end ? (
+              <Button id="next" onClick={() => this.increment()}>NEXT &#8594;</Button>
+            ) : <NoButton />}
           </Container>
         </ButtonDiv>
         <Lessons>
