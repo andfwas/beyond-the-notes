@@ -16,7 +16,7 @@ var Container = styled.div`
 `
 var Button = styled.button`
   height: 5vw;
-  width: 12vw;
+  width: 8vw;
   font-size: 1.5vw;
   border-radius: 1vw;
   transition: 0.2s;
@@ -38,70 +38,10 @@ height: 5vw;
 width: 12vw;
 font-size: 1.5vw;
 `
-var Clef = styled.button`
-  width: 4vw;
-  font-size: 1vw;
-  border-radius: 0.7vw;
-  transition: 0.2s;
-  box-shadow: 0.2vw 0.2vw 0.2vw black;
-  :hover {
-    background-color: lightgrey;
-    border: none;
-    box-shadow: none;
-  }
-  :focus {
-    outline: none;
-  }
-  :active {
-    background-color: #EFEFFF;
-  }
-`
 var ButtonDiv = styled.div`
   display: flex;
   justify-content: center;
   background-color: #035460;
-`;
-var Middle = styled.div`
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-
-`
-var ClefRow = styled.div`
-  width: 80%;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-  margin-top: -4vw;
-  margin-bottom: 1vw;
-`
-var SequenceRow = styled.div`
-  width: 80%;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-
-`
-var ShowHide = styled.button`
-  font-size: 1vw;
-  word-wrap: normal;
-  width: 7.5vw;
-  margin-bottom: -4vw;
-  border-radius: 0.7vw;
-  transition: 0.2s;
-  box-shadow: 0.2vw 0.2vw 0.2vw black;
-  :hover {
-    background-color: lightgrey;
-    border: none;
-    box-shadow: none;
-  }
-  :focus {
-    outline: none;
-  }
-  :active {
-    background-color: #FFEFEF;
-  }
 `
 class Lesson extends React.Component {
   constructor() {
@@ -110,9 +50,8 @@ class Lesson extends React.Component {
       clef: 21,
       note: 4,
       noteIndex: 4,
-      start: false,
-      end: false,
-      showHide: false
+      showHide: false,
+      noteDisplay: 'SHOW NOTE'
     }
   }
   treble = () => {
@@ -148,7 +87,7 @@ class Lesson extends React.Component {
     this.bass()
   }
   increment = () => {
-    if (this.state.noteIndex == 19) {
+    if (this.state.noteIndex === 19) {
       this.setState({
         noteIndex: 20,
         end: true
@@ -163,7 +102,7 @@ class Lesson extends React.Component {
     }
   }
   decrement = () => {
-    if (this.state.noteIndex == 1) {
+    if (this.state.noteIndex === 1) {
       this.setState({
         noteIndex: 0,
         start: true
@@ -185,37 +124,33 @@ class Lesson extends React.Component {
   }
   showHide = () => {
     var onOrOff = !this.state.showHide
-    this.setState({
-      showHide: onOrOff
-    })
+    if (onOrOff) {
+      this.setState({
+        showHide: onOrOff,
+        noteDisplay: 'HIDE  NOTE'
+      })
+    } else {
+      this.setState({
+        showHide: onOrOff,
+        noteDisplay: 'SHOW NOTE'
+      })
+    }
   }
   render() {
-    var start = this.state.start
-    var end = this.state.end
-    var index = this.state.index
+    var index = this.state.noteIndex
 
     return (
       <div>
         <ButtonDiv>
           <Container>
-            { !start ? (
+            { (index !== 0) ? (
               <Button id="back" onClick={() => this.decrement()}>&#8592; BACK</Button>
             ) : <NoButton />}
-            <Middle>
-            <ClefRow>
-              <Clef onClick={() => this.trebleHandler()}>Treble Clef</Clef>
-              <Clef onClick={() => this.altoHandler()}>Alto Clef</Clef>
-              <Clef onClick={() => this.tenorHandler()}>Tenor Clef</Clef>
-              <Clef onClick={() => this.bassHandler()}>Bass Clef</Clef>
-            </ClefRow>
-            <SequenceRow>
-              <ShowHide onClick={() => this.pickRandom()}>Pick a Random Note</ShowHide>
-              <ShowHide onClick={() => this.showHide()}>Show/Hide Note Name</ShowHide>
-            </SequenceRow>
-          </Middle>
-            { !end ? (
+            { (index !== 20) ? (
               <Button id="next" onClick={() => this.increment()}>NEXT &#8594;</Button>
             ) : <NoButton />}
+            <Button onClick={() => this.pickRandom()}>RANDOM</Button>
+            <Button onClick={() => this.showHide()}>{this.state.noteDisplay}</Button>
           </Container>
         </ButtonDiv>
         <Lessons>

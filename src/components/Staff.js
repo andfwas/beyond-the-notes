@@ -10,12 +10,6 @@ var ImageContainer = styled.div`
   position: relative;
   margin-left: -4.5vw;
 `
-var Outside = styled.div`
-  width: 100%;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-`
 var Note = styled.img`
   width: 100%;
   position: absolute;
@@ -55,7 +49,6 @@ class Staff extends React.Component {
     var clef = this.props.clef
     var note = this.props.noteIndex
     var show = this.props.showHide
-    console.log(show);
 
     function findNote(clef, index) {
       if (clef === 21) {
@@ -78,7 +71,7 @@ class Staff extends React.Component {
         </ImageContainer>
         { show ? (
           <NoteName>{noteName}</NoteName>
-        ) : null }
+        ) : <NotNoteName>{noteName}</NotNoteName> }
       </div>
     );
   }

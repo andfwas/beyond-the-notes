@@ -24,15 +24,15 @@ class Homepage extends React.Component {
     this.state = {
       sidebarActive: false,
       main: true,
-      buttonHtml: "Start Learning Now"
+      buttonHtml: "START"
     }
   }
   swapStaff = () => {
     var buttonState
     if (this.state.main) {
-      buttonState = 'Home'
+      buttonState = 'HOME'
     } else {
-      buttonState = 'Start Learning Now'
+      buttonState = 'START'
     }
     this.setState({
       sidebarActive: !this.state.sidebarActive,

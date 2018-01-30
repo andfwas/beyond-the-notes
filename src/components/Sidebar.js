@@ -34,7 +34,7 @@ var ButtonDiv = styled.div`
 `;
 var Button = styled.button`
   height: 5vw;
-  width: 12vw;
+  width: 8vw;
   font-size: 1.5vw;
   border-radius: 1vw;
   transition: 0.2s;
