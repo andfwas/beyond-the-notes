@@ -19,6 +19,7 @@ var Links = styled.div`
 
 var Atag = styled.a`
   transition: 0.3s;
+  font-size: 1.2vw;
   color: #DADADA;
   :hover {
     color: #FEDCBA;

@@ -12,7 +12,7 @@ var Bar = styled.div`
   justify-content: space-around;
 `;
 var Atag = styled.a`
-  font-size: 1vw;
+  font-size: 1.2vw;
   transition: 0.3s;
   color: #DADADA;
   text-decoration: none;
