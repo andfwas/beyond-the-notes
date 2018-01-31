@@ -128,7 +128,6 @@ class Lesson extends React.Component {
       thisLesson: 'All the Lines',
       noteNum: thisLesson[0]
     })
-    // console.log(thisLesson);
   }
   spaces = (lesson) => {
     var thisLesson = [7, 9, 11, 13, 11, 9, 7]
@@ -146,7 +145,6 @@ class Lesson extends React.Component {
       thisLesson: 'Ledger Lines',
       noteNum: thisLesson[0]
     })
-    // console.log(thisLesson);
   }
   random = (lesson) => {
     // this.setState({
@@ -167,7 +165,6 @@ class Lesson extends React.Component {
   }
   all = () => {
     var thisLesson = notes
-    console.log(thisLesson);
     this.setState({
       lessonList: thisLesson,
       thisLesson: 'All Notes',
@@ -192,12 +189,10 @@ class Lesson extends React.Component {
   }
   handleLesson = (e) => {
     var lesson = e.target.value
-    console.log('line 204', lesson);
     this.setState({
       currentLesson: lesson
     })
     var current = this.state.currentLesson
-    console.log(current);
     this.makeLesson(lesson)
   }
   increment = () => {
