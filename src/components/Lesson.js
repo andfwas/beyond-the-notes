@@ -147,11 +147,11 @@ class Lesson extends React.Component {
     })
   }
   random = (lesson) => {
-    // this.setState({
-    //   note: thisLesson[0]
-    // })
-    var thisLesson = notes
-    for (var i = notes.length - 1; i > 0; i--) {
+    var thisLesson = []
+    for (var i = 0; i < notes.length; i++) {
+      thisLesson.push(notes[i])
+    }
+    for (var i = thisLesson.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var temp = thisLesson[i];
       thisLesson[i] = thisLesson[j];
