@@ -65,7 +65,7 @@ var H = styled.h4`
 `
 var H3 = styled.h2`
   margin-left: 3vw;
-  margin-top: 2vw;
+  margin-top: 6vw;
 `
 class Lesson extends React.Component {
   constructor() {
@@ -173,6 +173,10 @@ class Lesson extends React.Component {
   }
   makeLesson = (lesson) => {
     currentIndex = 0
+    this.setState({
+      start: true,
+      end: false
+    })
     if (lesson == 'updown') {
       this.updown(lesson)
     } else if (lesson == 'lines') {

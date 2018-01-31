@@ -54,10 +54,12 @@ var Button = styled.button`
 var LogoImage = styled.img`
   width: 80%;
   margin-left: 10%;
+  margin-bottom: 3vw;
 `;
 var Image = styled.img`
   width: 90%;
   margin-left: 5%;
+  margin-bottom: 2vw;
 `;
 
 class Sidebar extends React.Component {
