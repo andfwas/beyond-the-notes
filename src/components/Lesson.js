@@ -65,7 +65,7 @@ var H = styled.h4`
 `
 var H3 = styled.h2`
   margin-left: 3vw;
-  margin-top: 2vw;
+  margin-top: 6vw;
 `
 class Lesson extends React.Component {
   constructor() {
@@ -190,7 +190,8 @@ class Lesson extends React.Component {
   handleLesson = (e) => {
     var lesson = e.target.value
     this.setState({
-      currentLesson: lesson
+      currentLesson: lesson,
+      start: true
     })
     var current = this.state.currentLesson
     this.makeLesson(lesson)
