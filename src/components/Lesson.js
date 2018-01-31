@@ -173,6 +173,10 @@ class Lesson extends React.Component {
   }
   makeLesson = (lesson) => {
     currentIndex = 0
+    this.setState({
+      start: true,
+      end: false
+    })
     if (lesson == 'updown') {
       this.updown(lesson)
     } else if (lesson == 'lines') {
