@@ -35,22 +35,23 @@ class Footer extends React.Component {
     this.state = {}
   }
   render() {
-    return (<Foot>
-      <Links>
-        <Atag>Home</Atag>
-        &nbsp;<p> | </p>&nbsp;
-        <Atag>About Us</Atag>
-        &nbsp;<p> | </p>&nbsp;
-        <Atag>Products</Atag>
-        &nbsp;<p> | </p>&nbsp;
-        <Atag>Sign Up</Atag>
-        &nbsp;<p> | </p>&nbsp;
-        <Atag>Contact Us</Atag>
-        &nbsp;<p> | </p>&nbsp;
-      </Links>
-      <div>
-        <p className="copy">&copy; 2018 Beyond The Notes</p>
-      </div>
+    return (
+      <Foot>
+        <Links>
+          <Atag>Home</Atag>
+          &nbsp;<p> | </p>&nbsp;
+          <Atag>About Us</Atag>
+          &nbsp;<p> | </p>&nbsp;
+          <Atag>Products</Atag>
+          &nbsp;<p> | </p>&nbsp;
+          <Atag>Sign Up</Atag>
+          &nbsp;<p> | </p>&nbsp;
+          <Atag>Contact Us</Atag>
+          &nbsp;<p> | </p>&nbsp;
+        </Links>
+        <div>
+          <p className="copy">&copy; 2018 Beyond The Notes</p>
+        </div>
     </Foot>)
   }
 }

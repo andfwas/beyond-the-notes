@@ -16,6 +16,7 @@ var Atag = styled.a`
   color: #DADADA;
   text-decoration: none;
   margin: 0.5vw;
+  font-size: 1vw;
   :hover {
     color: #FEDCBA;
   }
