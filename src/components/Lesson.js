@@ -44,7 +44,7 @@ var Button = styled.button`
 `
 var NoButton = styled.div`
 height: 5vw;
-width: 12vw;
+width: 8vw;
 font-size: 1.5vw;
 `
 var DropDown = styled.div`
