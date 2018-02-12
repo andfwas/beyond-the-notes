@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Staff from './Staff'
 
 const notes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-const upDown = [6, 7, 8, 9, 10, 11, 12, 13, 14, 13, 12, 11, 10, 9, 8, 7, 6]
+const upDown = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5]
 
 var currentIndex = 0
 
@@ -73,7 +73,7 @@ class Lesson extends React.Component {
     this.state = {
       clef: 21,
       note: 4,
-      noteNum: 6,
+      noteNum: 5,
       showHide: false,
       noteDisplay: 'SHOW NOTE',
       currentLesson: 'updown',
@@ -130,7 +130,7 @@ class Lesson extends React.Component {
     })
   }
   spaces = (lesson) => {
-    var thisLesson = [7, 9, 11, 13, 11, 9, 7]
+    var thisLesson = [5, 7, 9, 11, 13, 15, 13, 11, 9, 7, 5]
     this.setState({
       lessonList: thisLesson,
       thisLesson: 'All the Spaces',
@@ -235,10 +235,10 @@ class Lesson extends React.Component {
       })
     }
   }
-  pickRandom = () => {
-    var random = Math.floor(Math.random()*21)
+  pickRandom = (lesson) => {
+    var random = Math.floor(Math.random()*lesson.length)
     this.setState({
-      noteNum: random
+      noteNum: lesson[random]
     })
   }
   showHide = () => {
@@ -257,6 +257,7 @@ class Lesson extends React.Component {
   }
   render() {
     var index = this.state.noteNum
+    var thisRandom = this.state.lessonList
     return (
       <div>
         <Container>
@@ -286,7 +287,7 @@ class Lesson extends React.Component {
           { !this.state.end ? (
             <Button id="next" onClick={() => this.increment()}>NEXT &#8594;</Button>
           ) : <NoButton />}
-          <Button onClick={() => this.pickRandom()}>RANDOM</Button>
+          <Button onClick={() => this.pickRandom(thisRandom)}>RANDOM</Button>
           <Button onClick={() => this.showHide()}>{this.state.noteDisplay}</Button>
         </Container>
         <H3>NAME THAT NOTE -  <em>{this.state.thisLesson}</em></H3>
